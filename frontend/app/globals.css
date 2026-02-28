@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   Dark-mode variant: toggled via .dark class
+   ───────────────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─────────────────────────────────────────
+   Design tokens — light
+   ───────────────────────────────────────── */
+:root {
+  --bg:            #f4f5f7;
+  --surface:       #ffffff;
+  --border:        #e2e4e9;
+  --foreground:    #0d1117;
+  --muted:         #6b7280;
+  --hover:         #f0f2f5;
+  --primary:       #0f62fe;
+  --primary-hover: #0353d9;
+}
+
+/* Design tokens — dark */
+.dark {
+  --bg:            #0d1117;
+  --surface:       #161b22;
+  --border:        #30363d;
+  --foreground:    #e6edf3;
+  --muted:         #8b949e;
+  --hover:         #1c2128;
+  --primary:       #4d94ff;
+  --primary-hover: #79b0ff;
+}
+
+/* ─────────────────────────────────────────
+   Tailwind v4 theme wiring
+   ───────────────────────────────────────── */
+@theme inline {
+  --color-bg:            var(--bg);
+  --color-surface:       var(--surface);
+  --color-border:        var(--border);
+  --color-foreground:    var(--foreground);
+  --color-muted:         var(--muted);
+  --color-hover:         var(--hover);
+  --color-primary:       var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --font-sans:           var(--font-geist-sans);
+  --font-mono:           var(--font-geist-mono);
+}
+
+/* ─────────────────────────────────────────
+   Base
+   ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Styled scrollbar in dark mode */
+.dark ::-webkit-scrollbar           { width: 6px; height: 6px; }
+.dark ::-webkit-scrollbar-track     { background: var(--bg); }
+.dark ::-webkit-scrollbar-thumb     { background: var(--border); border-radius: 3px; }
+
+/* line-clamp utility (Tailwind v4 compat) */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
