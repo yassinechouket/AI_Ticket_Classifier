@@ -24,6 +24,9 @@ The agent operates in a Think → Act → Observe loop, invoking specialised too
 
 ## Tech Stack
 
+![WhatsApp Image 2026-02-28 at 3 21 55 AM](https://github.com/user-attachments/assets/b3f2f105-8a46-406a-9d6f-946d45d2aad7)
+
+
 ### Backend
 
 | Layer | Technology |
